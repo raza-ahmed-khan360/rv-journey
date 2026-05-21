@@ -26,7 +26,7 @@ export default function MediaPreview() {
 
       <ScrollReveal direction="fade" className="media-preview__video-container">
         <VideoFacade 
-          videoId="dQw4w9WgXcQ" 
+          videoId="tO01J-M3g0U" 
           thumbnail="/placeholder-video-thumb.jpg" 
           title="A Day in the Life on the Road" 
         />
