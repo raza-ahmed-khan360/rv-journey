@@ -1,0 +1,4 @@
+.section-wrapper {
+  padding: var(--space-section) 0;
+  position: relative;
+}

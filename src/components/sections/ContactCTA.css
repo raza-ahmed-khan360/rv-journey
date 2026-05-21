@@ -1,0 +1,135 @@
+.contact-cta {
+  background-color: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding-top: var(--space-4xl) !important;
+  padding-bottom: var(--space-4xl) !important;
+}
+
+.contact-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, var(--color-hairline) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-hairline) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contact-cta__container {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-cta__title {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-accent-blue);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  margin-bottom: var(--space-sm);
+}
+
+.contact-cta__subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+}
+
+.contact-cta__prose {
+  font-size: var(--text-body-md);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2xl);
+}
+
+.contact-cta__form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-cta__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+@media (min-width: 600px) {
+  .contact-cta__input-group {
+    flex-direction: row;
+    background-color: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs);
+    gap: 0;
+  }
+}
+
+.contact-cta__input {
+  flex: 1;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  color: var(--color-text);
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-md);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+@media (min-width: 600px) {
+  .contact-cta__input {
+    border: none;
+    background: transparent;
+  }
+}
+
+.contact-cta__input:focus {
+  border-color: var(--color-accent);
+}
+
+.contact-cta__submit {
+  white-space: nowrap;
+}
+
+.contact-cta__disclaimer {
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+/* Decorative abstract shapes */
+.contact-cta__decor {
+  position: absolute;
+  border: 1px solid var(--color-hairline);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.contact-cta__decor--left {
+  width: 300px;
+  height: 300px;
+  bottom: -150px;
+  left: -150px;
+  border-color: var(--color-accent-blue);
+  opacity: 0.2;
+}
+
+.contact-cta__decor--right {
+  width: 500px;
+  height: 500px;
+  top: -250px;
+  right: -250px;
+  border-color: var(--color-accent-gold);
+  opacity: 0.1;
+}

@@ -1,0 +1,57 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  line-height: var(--leading-tight);
+  padding: 18px 32px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  text-align: center;
+  border: none;
+  background: transparent;
+}
+
+/* Primary — Bold, patriotic red */
+.btn--primary {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(200, 57, 43, 0.2);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(200, 57, 43, 0.3);
+}
+
+/* Secondary — Patriotic blue */
+.btn--secondary {
+  background-color: var(--color-accent-blue);
+  color: #FFFFFF;
+  border-radius: var(--radius-sm);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-accent-blue-hover);
+  transform: translateY(-2px);
+}
+
+/* Ghost — SpaceX style pill */
+.btn--ghost {
+  border: 1px solid var(--color-hairline-strong);
+  color: var(--color-text);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(4px);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-text);
+}

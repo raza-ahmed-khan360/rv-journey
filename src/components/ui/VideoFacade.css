@@ -1,0 +1,65 @@
+.video-facade {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  background-color: #000;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-facade.is-playing {
+  cursor: default;
+}
+
+.video-facade__thumbnail {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.video-facade:hover .video-facade__thumbnail {
+  transform: scale(1.05);
+}
+
+.video-facade__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.video-facade:hover .video-facade__overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.video-facade__play-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  pointer-events: none; /* Let parent handle clicks */
+}
+
+.video-facade:hover .video-facade__play-btn {
+  transform: scale(1.1);
+  background: var(--color-accent-hover);
+}
+
+.video-facade__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

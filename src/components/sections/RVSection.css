@@ -1,0 +1,132 @@
+.rv-section {
+  background-color: var(--color-canvas);
+  position: relative;
+  overflow: hidden;
+}
+
+.rv-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .rv-section__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+  }
+}
+
+.rv-section__content {
+  order: 2;
+}
+
+@media (min-width: 960px) {
+  .rv-section__content {
+    order: 1;
+    padding-right: var(--space-2xl);
+  }
+  
+  .rv-section__visual {
+    order: 2;
+  }
+}
+
+.rv-section__title {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-accent-blue);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  margin-bottom: var(--space-sm);
+}
+
+.rv-section__subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+}
+
+.rv-section__prose {
+  font-size: var(--text-body-md);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.rv-section__details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  opacity: 0;
+}
+
+.rv-section__details.is-expanded {
+  max-height: 200px;
+  opacity: 1;
+  margin-bottom: var(--space-lg);
+}
+
+.rv-section__specs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 2px solid var(--color-accent-blue);
+  padding-left: var(--space-md);
+}
+
+.rv-section__specs li {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.rv-section__specs strong {
+  color: var(--color-text);
+}
+
+.rv-section__toggle {
+  background: transparent;
+  border: none;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  cursor: pointer;
+  padding: var(--space-xs) 0;
+  position: relative;
+}
+
+.rv-section__toggle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.rv-section__toggle:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.rv-section__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.rv-section__image {
+  object-fit: cover;
+}

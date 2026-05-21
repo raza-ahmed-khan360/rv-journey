@@ -1,0 +1,14 @@
+.mission {
+  background-color: var(--color-canvas);
+  text-align: center;
+}
+
+.mission__statement {
+  font-size: var(--text-display-md);
+  line-height: var(--leading-body);
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto;
+}

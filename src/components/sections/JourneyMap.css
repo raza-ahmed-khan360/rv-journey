@@ -1,0 +1,185 @@
+.journey-map {
+  background-color: transparent;
+  position: relative;
+  padding: var(--space-4xl) 0;
+}
+
+.journey-map__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-4xl);
+}
+
+.journey-map__title {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-accent-blue);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  margin-bottom: var(--space-sm);
+}
+
+.journey-map__subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  color: var(--color-text);
+  margin-bottom: var(--space-4xl);
+}
+
+/* Linear Timeline Container */
+.journey-map__linear-wrapper {
+  position: relative;
+  width: 100%;
+  padding: var(--space-2xl) 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Background Track */
+.journey-map__track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-surface);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Animated Progress Line */
+.journey-map__progress {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: var(--progress, 0%);
+  background-color: var(--color-accent-gold);
+  transform: translateY(-50%);
+  z-index: 2;
+  box-shadow: 0 0 10px var(--color-accent-gold);
+  transform-origin: left center;
+}
+
+/* Stops Container */
+.journey-map__stops {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+/* Individual Stop Node */
+.journey-map__stop-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey-map__stop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The Dot */
+.journey-map__dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-background);
+  border: 2px solid var(--color-accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.4);
+}
+
+.journey-map__dot-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-accent-gold);
+}
+
+/* The Label */
+.journey-map__label {
+  position: absolute;
+  top: 40px;
+  text-align: center;
+  width: max-content;
+}
+
+.journey-map__label h4 {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  margin: 0 0 4px 0;
+  letter-spacing: 0.05em;
+}
+
+.journey-map__label p {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* On mobile, stack them vertically instead of left-to-right */
+  .journey-map__linear-wrapper {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .journey-map__track {
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 2px;
+    height: 100%;
+    right: auto;
+    transform: none;
+  }
+
+  .journey-map__progress {
+    top: 0;
+    left: 19px;
+    width: 4px;
+    height: var(--progress, 0%);
+    background-color: var(--color-accent-gold);
+    transform: none;
+    transform-origin: top center;
+  }
+
+  .journey-map__stops {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3xl);
+    padding-left: 8px;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .journey-map__stop-container {
+    width: 100%;
+  }
+
+  .journey-map__stop {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .journey-map__label {
+    position: static;
+    text-align: left;
+    margin-left: var(--space-md);
+  }
+}
